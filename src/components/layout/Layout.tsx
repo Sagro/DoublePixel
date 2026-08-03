@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { ModernBackground } from '@/src/components/ui/ModernBackground';
 
 export function Layout() {
   return (
     <div className="bg-[#0A0A0A] text-[#F5F5F0] min-h-screen flex font-sans select-none relative border-[4px] md:border-8 border-[#1A1A1A]">
+      <ModernBackground />
       <aside className="w-[60px] border-r border-white/10 hidden md:flex flex-col items-center justify-between py-8 text-[10px] tracking-[0.3em] font-medium uppercase shrink-0 sticky top-0 h-screen overflow-hidden">
         <div className="rotate-180 whitespace-nowrap" style={{ writingMode: 'vertical-rl' }}>Double Pixel</div>
         <div className="w-px h-24 bg-gradient-to-b from-[#C6FF00] to-transparent"></div>

@@ -44,29 +44,24 @@ export function Projects() {
                   href={project.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block relative overflow-hidden bg-white/5 border border-white/10 rounded-2xl aspect-[4/3] w-full shrink-0"
+                  className="block relative overflow-hidden bg-white/5 border border-white/10 rounded-2xl aspect-[4/3] w-full shrink-0 group/img backdrop-blur-sm"
                 >
                   <div className="absolute inset-0 bg-zinc-800 animate-pulse" /> {/* Placeholder loading state */}
-                  {/* We use an img tag instead of next/image since this is Vite */}
                   <img 
                     src={project.image} 
                     alt={`Screenshot del progetto ${project.title}`}
-                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105 z-10"
                     loading="lazy"
-                    onLoad={(e) => {
-                      (e.target as HTMLImageElement).classList.remove('opacity-0');
-                    }}
                     onError={(e) => {
                       // Fallback if image doesn't exist yet
                       const target = e.target as HTMLImageElement;
                       target.src = `https://ui-avatars.com/api/?name=${project.title.replace(' ', '+')}&background=18181b&color=fafafa&size=800&font-size=0.1`;
-                      target.classList.remove('opacity-0');
                     }}
                   />
-                  <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-zinc-950/20 group-hover/img:bg-transparent transition-colors duration-500 z-20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60 z-20" />
                   
-                  <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 bg-[#C6FF00] text-[#0a0a0a] rounded-full flex items-center justify-center translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 bg-[#C6FF00] text-[#0a0a0a] rounded-full flex items-center justify-center translate-y-0 md:translate-y-4 opacity-100 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-30 shadow-[0_0_20px_rgba(198,255,0,0.4)]">
                     <ArrowUpRight size={20} className="md:w-6 md:h-6" />
                   </div>
                 </a>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
-import { Button } from '@/src/components/ui/Button';
+import { Logo } from '@/src/components/ui/Logo';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,10 +61,10 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-xl font-display font-bold tracking-tight hover:text-[#C6FF00] transition-colors z-50"
+            className="group hover:opacity-90 transition-opacity z-50"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Double Pixel<span className="text-[#C6FF00]">.</span>
+            <Logo />
           </Link>
 
           {/* Desktop Nav */}
