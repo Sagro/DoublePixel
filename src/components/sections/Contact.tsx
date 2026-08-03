@@ -9,16 +9,35 @@ import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 export function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('submitting');
     
-    // Configura qui l'invio reale (es. Resend, Formspree, o Server Action in Next.js)
-    // Esempio fittizio con timeout:
-    setTimeout(() => {
-      setFormState('success');
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setFormState('success');
+        form.reset();
+        setTimeout(() => setFormState('idle'), 5000);
+      } else {
+        setFormState('error');
+        setTimeout(() => setFormState('idle'), 3000);
+      }
+    } catch (error) {
+      setFormState('error');
+      setTimeout(() => setFormState('idle'), 3000);
+    }
   };
 
   return (
