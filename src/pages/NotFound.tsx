@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/src/components/ui/Button';
+import { SEO } from '@/src/components/SEO';
 
 export function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center pt-20 px-6">
+    <>
+      <SEO title="404 - Pagina non trovata" description="La pagina che cerchi non è disponibile." />
+      <div className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-xl w-full text-center">
         <h1 className="text-8xl md:text-[150px] font-display font-bold text-[#C6FF00] mb-4 leading-none tracking-tighter">404</h1>
         <h2 className="text-3xl md:text-5xl font-display font-bold text-zinc-50 mb-6 tracking-tight text-balance">
@@ -18,6 +21,7 @@ export function NotFound() {
           </Button>
         </Link>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

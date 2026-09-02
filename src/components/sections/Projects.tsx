@@ -77,13 +77,28 @@ export function Projects() {
                     {project.description}
                   </p>
                   <div className="mt-auto pt-4 border-t border-white/10">
-                    <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Realizzato da Simone Sagramati</span>
+                    <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold">Realizzato da {project.credits || "Simone Sagramati"}</span>
                   </div>
                 </div>
               </motion.div>
             );
           })}
         </div>
+        
+        <motion.div 
+          className="mt-20 pt-10 border-t border-white/10 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-xl md:text-2xl font-display font-medium text-white/70 italic">
+            ...e molti altri progetti realizzati dietro le quinte.
+          </p>
+          <p className="text-sm text-white/40 mt-4 max-w-md mx-auto">
+            Questi sono solo alcuni dei lavori selezionati. Ogni progetto è un percorso unico studiato per le esigenze del cliente.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

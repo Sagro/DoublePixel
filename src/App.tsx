@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/layout/Layout';
 import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
@@ -13,16 +14,18 @@ import { CookieBanner } from './components/CookieBanner';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="cookie-policy" element={<CookiePolicy />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-      <CookieBanner />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="cookie-policy" element={<CookiePolicy />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+        <CookieBanner />
+      </Router>
+    </HelmetProvider>
   );
 }

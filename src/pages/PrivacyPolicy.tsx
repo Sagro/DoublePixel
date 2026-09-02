@@ -1,6 +1,10 @@
+import { SEO } from '@/src/components/SEO';
+
 export function PrivacyPolicy() {
   return (
-    <div className="pt-32 pb-24 px-6 container mx-auto max-w-4xl">
+    <>
+      <SEO title="Privacy Policy - Double Pixel" description="Informativa sulla privacy di Double Pixel." />
+      <div className="pt-32 pb-24 px-6 container mx-auto max-w-4xl">
       <h1 className="text-4xl md:text-5xl font-display font-bold mb-8">Privacy Policy</h1>
       <div className="prose prose-invert prose-zinc max-w-none text-zinc-400 font-light leading-relaxed space-y-6">
         <p>
@@ -21,6 +25,7 @@ export function PrivacyPolicy() {
         </p>
         {/* Aggiungi altri paragrafi qui */}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

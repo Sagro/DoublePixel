@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   url: string;
   image: string;
+  credits?: string;
 }
 
 export const projects: Project[] = [
@@ -12,7 +13,7 @@ export const projects: Project[] = [
     id: "mai-dire-eventi",
     title: "Mai Dire Eventi",
     category: "Eventi / Entertainment",
-    description: "Una presenza digitale pensata per raccontare eventi, energia e intrattenimento.",
+    description: "Una presenza digitale pensata per raccontare eventi, energia e intrattenimento, integrata con funzionalità ecommerce.",
     url: "https://www.maidireeventi.it",
     image: "/images/projects/mai-dire-eventi.webp"
   },
@@ -28,9 +29,10 @@ export const projects: Project[] = [
     id: "techzilla",
     title: "Techzilla",
     category: "Tecnologia / Editoriale",
-    description: "Un ecosistema editoriale dedicato al mondo della tecnologia e dell’innovazione.",
+    description: "Un ecosistema editoriale dedicato al mondo della tecnologia e dell’innovazione, realizzato da Simone Sagramati e Emanuele Strano.",
     url: "https://www.techzilla.it",
-    image: "/images/projects/techzilla.webp"
+    image: "/images/projects/techzilla.webp",
+    credits: "Simone Sagramati ed Emanuele Strano"
   },
   {
     id: "birrificio-babylon",
@@ -44,7 +46,7 @@ export const projects: Project[] = [
     id: "arnia-del-cuciniere",
     title: "Arnia del Cuciniere",
     category: "Food / Artigianato",
-    description: "Un sito che valorizza prodotti, cura e tradizione artigianale.",
+    description: "Un sito che valorizza i prodotti, la cura e la tradizione per un rinomato ristorante situato a Falconara Marittima.",
     url: "https://www.arniadelcuciniere.it",
     image: "/images/projects/arnia-del-cuciniere.webp"
   },
@@ -68,7 +70,7 @@ export const projects: Project[] = [
     id: "femya",
     title: "Femya",
     category: "Brand / Lifestyle",
-    description: "Un’identità online essenziale, contemporanea e riconoscibile.",
+    description: "Un'identità online essenziale, contemporanea e riconoscibile dedicata alla presentazione e vendita di opere d'arte artigianali.",
     url: "https://www.femya.it",
     image: "/images/projects/femya.webp"
   },
@@ -92,7 +94,7 @@ export const projects: Project[] = [
     id: "il-trono-del-muori",
     title: "Il Trono del Muori",
     category: "Entertainment / Community",
-    description: "Un progetto digitale pensato per coinvolgere una community attraverso il racconto.",
+    description: "Un progetto digitale e piattaforma ecommerce pensata per coinvolgere una community attraverso il racconto.",
     url: "https://www.iltronodelmuori.it/",
     image: "/images/projects/il-trono-del-muori.webp"
   },
@@ -116,7 +118,7 @@ export const projects: Project[] = [
     id: "sophia-campana",
     title: "Sophia Campana",
     category: "Personal Brand / Lifestyle",
-    description: "Un sito personale costruito per valorizzare identità, stile e presenza digitale.",
+    description: "Un ecommerce e sito personale costruito per valorizzare il brand di una youtuber e ginnasta, unendo identità, stile e presenza digitale.",
     url: "https://www.sophiacampana.com",
     image: "/images/projects/sophia-campana.webp"
   }
